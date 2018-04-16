@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Blog o Javie i Springu</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="http://splon.pl">Tweetlike</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href='http://splon.pl/addpost'>Dodaj post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='http://splon.pl/profile'>Mój profil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='http://splon.pl:8181/weather'>Pogodynka</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='http://splon.pl:8282/'>Chat online</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='http://splon.pl:8484/'>Quiz Milionerzy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='http://splon.pl/about'>O nas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='http://splon.pl/logout'>Wyloguj</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <header class="masthead" style="background-image: url('/tlo4.jpg')">
+      <div class="container">
+        <div class="row">
+            <div class="site-heading">
+              <a href="https://github.com/bastekkrakow/milionerzy">
+                <img src="GitHub-Mark-Light-32px.png" alt="GitHub" style="width:30px;height:30px;">
+              </a>
+              <br>
+              <br>
+              <h1 style="background-color:#0c2ee6;" font color="white" th:text="'Pytanie : ' + ${question.getQuestion()}"></h1>
+              <br>
+              <br>
+              <form method="post" action="getWeatherController" style="background-color:#e6162f">
+                <input type="radio" th:text=" ${question.getAnswer1()}" th:name="weatherType" th:value="1" ><br>
+                <input type="radio" th:text=" ${question.getAnswer2()}" th:name="weatherType" th:value="2" ><br>
+                <input type="radio" th:text=" ${question.getAnswer3()}" th:name="weatherType" th:value="3" ><br>
+                <input type="radio" th:text=" ${question.getAnswer4()}" th:name="weatherType" th:value="4" ><br>
+                <input type="submit">
+              </form>
+              <br>
+              <h2 style="background-color:#e6162f;" font color="white" th:text="'Masz: ' + ${points} + ' punktów'" ></h2>
+              </div>
+          </div>
+        </div>
+    </header>
+    <center>Strona w budowie</center>
+  </body>
+</html>
