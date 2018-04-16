@@ -35,7 +35,7 @@ public class MainController {
         lista.add(library.getQuestion2());
         lista.add(library.getQuestion3());
         lista.add(library.getQuestion4());
-        //counter = 0;
+        points = 0;
         model.addAttribute("question", lista.get(0));
         return "index";
     }
@@ -45,12 +45,8 @@ public class MainController {
                            Model model) {
         if (Integer.parseInt(answer) == lista.get(counter).getCorrect()) points++;
         counter++;
-        System.out.println(points);
-
         model.addAttribute("question", lista.get(counter));
         model.addAttribute("points", points);
-
-
         return "index";
     }
 
