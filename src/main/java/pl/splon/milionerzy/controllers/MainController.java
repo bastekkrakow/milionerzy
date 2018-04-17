@@ -29,7 +29,6 @@ public class MainController {
     }
 
     @GetMapping("/")
-    //  @ResponseBody
     public String index(Model model) {
         lista.add(library.getQuestion1());
         lista.add(library.getQuestion2());
@@ -37,6 +36,7 @@ public class MainController {
         lista.add(library.getQuestion4());
         points = 0;
         model.addAttribute("question", lista.get(0));
+        model.addAttribute("points", points);
         return "index";
     }
 
@@ -45,6 +45,8 @@ public class MainController {
                            Model model) {
         if (Integer.parseInt(answer) == lista.get(counter).getCorrect()) points++;
         counter++;
+        if (counter > lista.size()-1){points=0;
+        counter=0;}
         model.addAttribute("question", lista.get(counter));
         model.addAttribute("points", points);
         return "index";
