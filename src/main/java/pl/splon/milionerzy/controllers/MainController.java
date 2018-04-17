@@ -40,8 +40,8 @@ public class MainController {
         return "index";
     }
 
-    @PostMapping("/getWeatherController")
-    public String question(@RequestParam("weatherType") String answer,
+    @PostMapping("/milionerzy")
+    public String question(@RequestParam("answer") String answer,
                            Model model) {
         if (Integer.parseInt(answer) == lista.get(counter).getCorrect()) points++;
         counter++;

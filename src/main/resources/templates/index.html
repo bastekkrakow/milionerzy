@@ -66,15 +66,15 @@
         <button type="button" class="btn btn-warning btn-lg btn-block" th:text="'Pytanie : ' + ${question.getQuestion()}"></button>
         <br>
         <br>
-        <form action="getWeatherController" method="post">
+        <form action="milionerzy" method="post">
               <span class="btn-group-vertical">
-                <button class="btn btn-primary" th:text=" ${question.getAnswer1()}" th:name="weatherType" type="submit"
+                <button class="btn btn-primary" th:text=" ${question.getAnswer1()}" th:name="answer" type="submit"
                         th:value="1"></button>&nbsp;
-                <button class="btn btn-primary" th:text=" ${question.getAnswer2()}" th:name="weatherType" type="submit"
+                <button class="btn btn-primary" th:text=" ${question.getAnswer2()}" th:name="answer" type="submit"
                         th:value="2"></button>&nbsp;
-                <button class="btn btn-primary" th:text=" ${question.getAnswer3()}" th:name="weatherType" type="submit"
+                <button class="btn btn-primary" th:text=" ${question.getAnswer3()}" th:name="answer" type="submit"
                         th:value="3"></button>&nbsp;
-                <button class="btn btn-primary" th:text=" ${question.getAnswer4()}" th:name="weatherType" type="submit"
+                <button class="btn btn-primary" th:text=" ${question.getAnswer4()}" th:name="answer" type="submit"
                         th:value="4"></button>&nbsp;
               </span>
         </form>
